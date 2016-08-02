@@ -1,16 +1,329 @@
 <!DOCTYPE HTML>
-<html lang="pt-BR">
+<html lang="en" dir="ltr">
 <head>
 	<meta charset="UTF-8">
-	<title>Code AM - Tutorial #1</title>
-	
-	<script type="text/javascript" src="/js/angular.js"></script>
-	<script type="text/javascript" src="/js/angular-route.js"></script>
-	<script type="text/javascript" src="/js/app.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<base href="/" />
+	<title>Teste CI&T - Ronald Reis</title>
+
+  <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/horizontal-timeline.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+
 </head>
-<body ng-app="codeAmApp">
-	<ng-view></ng-view>
+<body ng-app="ronaldApp">
+	<section class="cd-horizontal-timeline">
+		<div class="timeline">
+			<div class="events-wrapper">
+				<div class="events">
+					<ol class="lista-da-timeline">
+						<li><a href="#0" data-date="10/01/2014" class="selected" id="1">1</a></li>
+						<li><a href="#0" data-date="10/02/2014" id="2">2</a></li>
+						<li><a href="#0" data-date="10/03/2014" id="3">3</a></li>
+						<li><a href="#0" data-date="10/04/2014" id="4">4</a></li>
+						<li><a href="#0" data-date="10/05/2014" id="5">5</a></li>
+						<li><a href="#0" data-date="10/06/2014" id="6" style="display: none;"></a></li>
+					</ol>
+
+					<span class="filling-line" aria-hidden="true"></span>
+				</div> <!-- .events -->
+			</div> <!-- .events-wrapper -->
+
+			<ul class="cd-timeline-navigation">
+				<li><a href="#0" class="prev inactive">Prev</a></li>
+				<li><a href="#0" class="next">Next</a></li>
+			</ul> <!-- .cd-timeline-navigation -->
+		</div> <!-- .timeline -->
+
+		<div class="events-content">
+			<ol>
+				<li class="selected" data-date="10/01/2014">
+					<div class="container container-form-1">
+						<div class="row linha-1-form-1">
+							<div class="col-md-12 col-tit-form-1">
+								<p>First things first: tell us a little bit about yourself.</p>
+
+								<p>While coding this form, show us how much you care for user experience. Do not forget to validate all the fields with proper messages for blank state, valid and invalid data.</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<form class="form-inline">
+							  <div class="form-group form-group-1">
+							    <label class="sr-only" for="comic-book-superhero">Comic book superhero</label>
+							    <input type="text" class="form-control" id="comic-book-superhero" placeholder="Your favority comic book superhero">
+							  </div>
+							  <div class="form-group form-group-2">
+							    <label class="sr-only" for="tv-series">TV Series you are watching</label>
+							    <input type="text" class="form-control" id="tv-series" placeholder="TV Series that you are currently watching">
+							  </div><br>
+								<div class="form-group form-group-3">
+							    <label class="sr-only" for="bolacha-or-biscoito">Bolacha or biscoito</label>
+							    <input type="text" class="form-control" id="bolacha-or-biscoito" placeholder="Wich one do you use: Bolacha or biscoito">
+							  </div>
+							  <div class="form-group form-group-4">
+							    <label class="sr-only" for="best-quote">Best quote</label>
+							    <input type="text" class="form-control" id="best-quote" placeholder="What is the best quote ever">
+							  </div><br>
+
+								<hr class="divisoria-1">
+
+								<a href="#" class="btn btn-primary pull-right" onclick="grava_dados_form1();">Next</a>
+
+							</form>
+						</div>
+					</div>
+				</li>
+
+				<li data-date="10/02/2014">
+					<div class="container container-form-1 container-form-2" ng-controller="form2Ctrl">
+						<div class="row linha-1-form-1">
+							<div class="col-md-12 col-tit-form-1">
+								<p>Which of these is your favorite Star Wars movie?</p>
+							</div>
+						</div>
+
+						<div class="row">
+							<form>
+								<div class="movie" ng-repeat="movie in movies" ng-class="{'sem-margem-direita' : {{$index + 1}} % 4 == 0}">
+									<div class="foto" ng-if="movie.Poster == 'N/A'">
+										<img src="img/no-image.png" alt="Poster" class="sem-imagem" />
+									</div>
+									<div class="foto" ng-if="movie.Poster != 'N/A'" >
+										<img src="{{movie.Poster}}" alt="Poster" class="responsiva" />
+									</div>
+									<div class="desc">
+										<input type="radio" name="filme-escolhido" value="{{movie.Title}}"><br />
+										{{movie.Title}}
+									</div>
+								</div>
+
+								<hr class="divisoria-1">
+
+								<a href="#" class="btn btn-primary pull-left" onclick="$('.lista-da-timeline #1').click(); colore_timeline();">Back</a>
+								<a href="#" class="btn btn-primary pull-right" onclick="grava_dados_form2();">Next</a>
+
+							</form>
+						</div>
+					</div>
+				</li>
+
+				<li data-date="10/03/2014">
+					<div class="container container-form-1 container-form-3" ng-controller="form3Ctrl">
+					  <div class="row">
+					    <div class="col-md-6">
+					      <img src="{{gameofthrones.Poster}}" alt="Game of Thrones Poster" class="img-game-of-thornes" />
+					    </div>
+					    <div class="col-md-6">
+								<p>
+								  <h3Game of Thrones (2011 -)</h3>
+								</p>
+								<p>
+								  Plot":"While a civil war brews between several noble families in Westeros, the children of the former rulers of the land attempt to rise up to power. Meanwhile a forgotten race, bent on destruction, plans to return after thousands of years in the North.
+								</p>
+								<p>
+									Got is an amazing TV Show. What is your favorite season?
+								</p>
+								<p>
+									<div class="radios-game-of-thrones">
+										<input type="radio" name="game-of-thrones-radio" value="1" ng-click="selectSeason(1)";><br />
+										1
+									</div>
+									<div class="radios-game-of-thrones">
+										<input type="radio" name="game-of-thrones-radio" value="2" ng-click="selectSeason(2)";><br />
+										2
+									</div>
+									<div class="radios-game-of-thrones">
+										<input type="radio" name="game-of-thrones-radio" value="3" ng-click="selectSeason(3)";><br />
+										3
+									</div>
+									<div class="radios-game-of-thrones">
+										<input type="radio" name="game-of-thrones-radio" value="4" ng-click="selectSeason(4)";><br />
+										4
+									</div>
+									<div class="radios-game-of-thrones">
+										<input type="radio" name="game-of-thrones-radio" value="5" ng-click="selectSeason(5)";><br />
+										5
+									</div>
+									<div class="radios-game-of-thrones">
+										<input type="radio" name="game-of-thrones-radio" value="6" ng-click="selectSeason(6)";><br />
+										6
+									</div>
+								</p>
+					    </div>
+					  </div>
+
+					  <div class="row gameofthrones-details">
+
+					    <div class="col-md-12">
+								<table class="table table-striped tabela-temporada">
+								  <thead>
+								    <tr>
+								      <th>Episode</th>
+								      <th>Name</th>
+								      <th>Released</th>
+								      <th>Imdb Rating</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								    <tr ng-repeat="seasonDetail in seasonDetails">
+								      <th scope="row">{{seasonDetail.Episode}}</th>
+								      <td>{{seasonDetail.Title}}</td>
+								      <td>{{seasonDetail.Released}}</td>
+								      <td>{{seasonDetail.imdbRating}}</td>
+								    </tr>
+								  </tbody>
+								</table>
+					    </div>
+
+					  </div>
+
+						<hr class="divisoria-1">
+
+						<a href="#" class="btn btn-primary pull-left" onclick="$('.lista-da-timeline #2').click(); colore_timeline();">Back</a>
+						<a href="#" class="btn btn-primary pull-right" onclick="grava_dados_form3();">Next</a>
+					</div>
+				</li>
+
+				<li data-date="10/04/2014">
+					<div class="container container-form-1 container-form-4">
+
+						<div class="row">
+							<form>
+								<div class="movie movie2">
+									<div class="foto foto2">
+										<img src="img/frutas.jpg" alt="Frutas" />
+									</div>
+									<div class="desc">
+										<input type="radio" name="comida-escolhida" value="I am an insect."><br />
+										I am an insect.
+									</div>
+								</div>
+								<div class="movie movie2">
+									<div class="foto foto2">
+										<img src="img/pasta.jpg" alt="Pasta" />
+									</div>
+									<div class="desc">
+										<input type="radio" name="comida-escolhida" value="I love pasta."><br />
+										I love pasta.
+									</div>
+								</div>
+								<div class="movie movie2">
+									<div class="foto foto2">
+										<img src="img/meat.jpg" alt="Meat" />
+									</div>
+									<div class="desc">
+										<input type="radio" name="comida-escolhida" value="Gimme meat."><br />
+										Gimme meat.
+									</div>
+								</div>
+								<div class="movie movie2 sem-margem-direita">
+									<div class="foto foto2">
+										<img src="img/food.jpg" alt="Food" />
+									</div>
+									<div class="desc">
+										<input type="radio" name="comida-escolhida" value="Is it food? I am in."><br />
+										Is it food? I am in.
+									</div>
+								</div>
+
+								<hr class="divisoria-1">
+
+								<a href="#" class="btn btn-primary pull-left" onclick="$('.lista-da-timeline #3').click(); colore_timeline();">Back</a>
+								<a href="#" class="btn btn-primary pull-right" onclick="grava_dados_form4();">Next</a>
+							</form>
+						</div>
+					</div>
+				</li>
+
+				<li data-date="10/05/2014">
+					<div class="container container-form-1 container-form-5">
+						<div class="row linha-1-form-1">
+							<div class="col-md-12 col-tit-form-1">
+								<p>Review.</p>
+							</div>
+						</div>
+
+						<div class="row respostas-finais">
+							<form class="form-inline">
+							  <div class="row">
+							    <div class="col-md-6">
+							      <div class="resposta sem-padding-top">
+							      	Your favorite comic book superhero <br />
+											<span id="res1"> resposta </span>
+							      </div>
+							    </div>
+							    <div class="col-md-6">
+										<div class="resposta sem-padding-top">
+							      	TV series that you are currently watching <br />
+											<span id="res2"> resposta </span>
+							      </div>
+							    </div>
+							  </div>
+							  <div class="row">
+							    <div class="col-md-6">
+										<div class="resposta">
+							      	Bolacha or biscoito <br />
+											<span id="res3"> resposta </span>
+							      </div>
+							    </div>
+							    <div class="col-md-6">
+										<div class="resposta">
+							      	What is the best quote ever <br />
+											<span id="res4"> resposta </span>
+							      </div>
+							    </div>
+							  </div>
+
+								<div class="row">
+							    <div class="col-md-4">
+										<div class="resposta">
+							      	Your favorite Star Wars Movie <br />
+											<span id="res5"> resposta </span>
+							      </div>
+							    </div>
+							    <div class="col-md-4">
+										<div class="resposta">
+							      	Your favorite got Season <br />
+											<span id="res6"> resposta </span>
+							      </div>
+							    </div>
+									<div class="col-md-4">
+										<div class="resposta">
+							      	Your kind of food <br />
+											<span id="res7"> resposta </span>
+							      </div>
+							    </div>
+							  </div>
+
+								<hr class="divisoria-1">
+
+								<a href="#" class="btn btn-primary pull-right" onclick="$('.lista-da-timeline #6').click(); colore_timeline();">Save</a>
+
+							</form>
+						</div>
+					</div>
+				</li>
+
+				<li data-date="10/06/2014">
+					<div class="container container-form-1 container-form-6">
+						<div class="row linha-1-form-1">
+							<div class="col-md-12 col-tit-form-6">
+								<p>Thank you for your time. YOU ROCK!</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ol>
+		</div> <!-- .events-content -->
+	</section>
+
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+	<script type="text/javascript" src="js/horizontal-timeline.js"></script> <!-- Resource jQuery -->
+	<script type="text/javascript" src="js/scripts.js"></script> <!-- Resource jQuery -->
 </body>
 </html>
