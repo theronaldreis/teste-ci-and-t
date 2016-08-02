@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Code AM - Tutorial #1</title>
+
+  <link rel="stylesheet" href="/sites/teste-ci-and-t/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/sites/teste-ci-and-t/css/horizontal-timeline.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/sites/teste-ci-and-t/css/style.css" media="screen" title="no title" charset="utf-8">
+
+	<base href="/sites/teste-ci-and-t/" />
+</head>
+<body ng-app="ronaldApp">
+	<section class="cd-horizontal-timeline">
+		<div class="timeline">
+			<div class="events-wrapper">
+				<div class="events">
+					<ol>
+						<li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>
+						<li><a href="#0" data-date="28/02/2014">28 Feb</a></li>
+					</ol>
+
+					<span class="filling-line" aria-hidden="true"></span>
+				</div> <!-- .events -->
+			</div> <!-- .events-wrapper -->
+
+			<ul class="cd-timeline-navigation">
+				<li><a href="#0" class="prev inactive">Prev</a></li>
+				<li><a href="#0" class="next">Next</a></li>
+			</ul> <!-- .cd-timeline-navigation -->
+		</div> <!-- .timeline -->
+
+		<div class="events-content">
+			<ol>
+				<li class="selected" data-date="16/01/2014">
+					<div class="container container-form-1" ng-controller="form1">
+						<div class="row linha-1-form-1">
+							<div class="col-md-12 col-tit-form-1">
+								<p>First things first: tell us a little bit about yourself.</p>
+
+								<p>While coding this form, show us how much you care for user experience. Do not forget to validate all the fields with proper messages for blank state, valid and invalid data.</p>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<form class="form-inline">
+							  <div class="form-group form-group-1">
+							    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+							    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Your favority comic book superhero">
+							  </div>
+							  <div class="form-group form-group-2">
+							    <label class="sr-only" for="exampleInputPassword3">Password</label>
+							    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="TV Series that you are currently watching">
+							  </div><br>
+								<div class="form-group form-group-3">
+							    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+							    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Wich one do you use: Bolacha or biscoito">
+							  </div>
+							  <div class="form-group form-group-4">
+							    <label class="sr-only" for="exampleInputPassword3">Password</label>
+							    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="What is the best quote ever">
+							  </div><br>
+
+							  <button type="submit" class="btn btn-primary">Sign in</button>
+							</form>
+						</div>
+					</div>
+				</li>
+
+				<li data-date="28/02/2014">
+					<h2>Event title here</h2>
+					<em>February 28th, 2014</em>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+					</p>
+				</li>
+			</ol>
+		</div> <!-- .events-content -->
+	</section>
+
+
+
+
+
+
+	<script type="text/javascript" src="/sites/teste-ci-and-t/js/angular.js"></script>
+	<script type="text/javascript" src="/sites/teste-ci-and-t/js/app.js"></script>
+	<script type="text/javascript" src="/sites/teste-ci-and-t/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="/sites/teste-ci-and-t/js/bootstrap.js"></script>
+	<script src="/sites/teste-ci-and-t/js/jquery.mobile.custom.min.js"></script>
+	<script src="/sites/teste-ci-and-t/js/horizontal-timeline.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

@@ -1,0 +1,240 @@
+* {margin:0; padding: 0;}
+html, body {
+  height:100%;
+  font-size: 16px;
+}
+
+.container-form-1
+{
+  padding: 20px;
+  /*margin-top: 50px;*/
+  background-color: #fafafa !important;
+  border: 1px solid #E4E4E4;
+  max-width: 925px;
+  box-sizing: border-box;
+  margin-top: -23px;
+  overflow: hidden;
+}
+
+.container-form-1 .row{
+  margin: 0;
+}
+.container-form-1 .row .form-group{
+  margin: 0 15px 15px 0;
+}
+
+.linha-1-form-1{
+  margin-bottom: 30px;
+}
+
+.col-tit-form-1{
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.container-form-1 input{
+  background-color: inherit;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+  border-radius: 0;
+}
+
+.container-form-1 .form-control:focus{
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.container-form-1 .btn{
+  margin: 30px 0 13px 0;
+}
+
+.divisoria-1{
+  border-top: 1px solid #E4E4E4;
+  width: 130%;
+  margin: 30px 0 0 -20px;
+}
+
+/* INÍCIO - Área da linha da timeline */
+.cd-horizontal-timeline .timeline{
+  width: 90%;
+  max-width: 925px;
+  background-color: #fafafa !important;
+  border: 1px solid #E4E4E4;
+}
+
+.cd-timeline-navigation{
+  display: none;
+}
+
+.cd-horizontal-timeline .events-content{
+  margin-top: 0;
+}
+
+.cd-horizontal-timeline .events a{
+  padding-bottom: 0;
+  margin-top: -10px;
+  text-decoration: none;
+}
+
+.cd-horizontal-timeline .filling-line{
+  background-color: #dfdfdf;
+}
+
+.cd-horizontal-timeline .events a,
+.cd-horizontal-timeline .events a.selected{
+  font-size: 12px;
+}
+
+.cd-horizontal-timeline .events a.selected{
+  color: #fff;
+  font-size: 12px;
+}
+
+.cd-horizontal-timeline .events a{
+  color: #000;
+  font-size: 12px;
+}
+
+.cd-horizontal-timeline .events a::after,
+.cd-horizontal-timeline .events a.selected:after{
+  z-index: -1;
+}
+
+.cd-horizontal-timeline .events a::after{
+  height: 22px;
+  width: 22px;
+  bottom: -2px;
+}
+
+.cd-horizontal-timeline .events a.selected:after {
+  background-color: #000;
+  border-color: #000;
+}
+
+.lista-da-timeline{
+  position: relative;
+  bottom: 100px;
+}
+
+.container-form-3 img{
+  width: 200px;
+  height: 250px;
+}
+
+/* FIM - Área da linha da timeline */
+
+.container-form-2 form,
+.container-form-4 form{
+  text-align: center;
+}
+
+form .movie{
+  /*border: 1px solid #000;*/
+  font-size: 14px;
+  width: 130px;
+  height: 285px;
+  margin: 10px 115px 30px 0;
+  float: left;
+}
+
+form .movie2{
+  margin: 30px 115px 30px 0;
+}
+
+form .movie .foto,
+form .movie .foto .responsiva,
+.foto2{
+  height: 192px;
+  width: 130px;
+}
+
+form .movie .foto2{
+  border-radius: 100px;
+  height: 130px;
+  overflow: hidden;
+}
+
+form .movie .foto .sem-imagem{
+  width: 130px;
+  margin-top: 40px;
+}
+
+form .sem-margem-direita{
+  margin-right: 0;
+}
+
+.container-form-2 input[type="radio"],
+.container-form-4 input[type="radio"]{
+  margin: 15px 0
+}
+
+.radios-game-of-thrones{
+  float: left;
+  margin: 10px 50px 10px 0;
+}
+
+.gameofthrones-details .tabela-temporada{
+  display: none;
+  margin-top: 50px;
+}
+
+.resposta{
+  padding-top: 35px;
+  font-size: 12px;
+  max-width: 320px;
+  border-bottom: 1px solid #E4E4E4;
+}
+
+.resposta span{
+  font-size: 22px;
+}
+
+.col-md-4 .resposta{
+  border: none;
+}
+
+.respostas-finais{
+  margin-top: 55px;
+}
+
+li .container-form-6 .row .col-tit-form-6 p{
+  padding: 70px;
+  font-size: 35px;
+  text-align: center;
+}
+
+@media (max-width: 485px){
+  form .movie{
+    margin: 10px auto 30px auto;
+    float: none;
+  }
+
+  .img-game-of-thornes{
+    margin: 0 auto;
+  }
+
+  .lista-da-timeline{
+    margin-left: -38px;    
+  }
+}
+
+@media (min-width: 768px){
+  .container-form-1 .form-control{
+    width: 350px;
+  }
+
+  .container-form-1 .row .form-group-1,
+  .container-form-1 .row .form-group-3{
+    margin-right: 90px
+  }
+
+  .container-form-1 .row .form-group-1,
+  .container-form-1 .row .form-group-2{
+    margin-bottom: 50px;
+  }
+
+}
